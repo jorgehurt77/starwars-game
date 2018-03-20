@@ -4,25 +4,49 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Star Wars Game Jquery</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
-    <script src="./assets/javascript/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    
 
 </head>
 <body>
-    <img src="assets/images/pic1.jpg">
+    
     <div class="main-section-title">Star Wars RPG!</div>
     <div id="main-game-section">
+        <!--Where the characters are initially available to be selected.-->
     <div id="characters-section">
         <div class="section-tittle">Select Your Characters</div>
     </div>
+
+        <!--Section for selected characters-->
     <div id= "selected-character-section">
         <div class="section-title">Your Characters</div>
-        <div id="selected-character">
+        <div class="selected-character">
+
+
     </div>
+        
+        <!--Where our selected character will appear-->
+    
+    <div id="available-to-attack-section">
+        <div class="section-title">Enemies Available to Attack</div>
     </div>
+
+    <div class="section-title">Fight Section</div>
+    <div id="figth-section">
+        <button id="attack-button">Attack</button>
+    </div>
+
+    <div id="action">
+        <div class="character-section"></div>
+        <div class="section-title">Defender</div>
+        <!-- Where our defender will appear-->
+    <div id="defender"></div>
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
-    <script type= "text/javascript" src= "./assets/javascript/game.js"></script>
+    <script type="text/javascript" src= "./assets/javascript/game.js"></script>
 </body>
 </html>

@@ -1,96 +1,51 @@
-$( document).ready (function(){
- 
-    let ObiWan = {
-        "name": "luke",
-        "health": 200,
-        "multiplier": 10,
-        "power": function (){
-            return Math.random()*this.multiplier
-      },
-      src: "./ObiWan.jpg"
-    };
-   
-    let darthMaul = {
-        "name": "darth maul",
-        "health":300,
-        "multiplier": 5,
-        "power": function(){
-            return Math.random()*this.multiplier
-        },
-      src: "./Darthmaul_profile.jpg"
-    };
-    
-    function isJEdiDead(jedi) {
-      if (jedi.health <= 0) {
-          return true;
-      }
-      return false;
+$(document).ready(function() {
+    var characters = {
+        "Obi-Wan Kenobi": {
+            name: "Obi-Wan Kenobi",
+            health: 120,
+            attack: 8,
+            imageUrl: "assets/images/pic2.jpg",
+            enemyAttackBack: 15
+    },
+        "Luke Skywalker": {
+            name: "Luke Skywalker",
+            health: 100,
+            attack: 14,
+            imageUrl: "assets/images/pic3.jpg",
+            enemyAttackBack: 5
+    },
+        "Darth Vader": {
+            name: "Darth Vader",
+            health: 150,
+            attack: 8,
+            imageUrl: "assets/images/pic4.jpg",
+            enemyAttackBack: 5
+    },
+
+        "Yoda": {
+            name: "Yoda",
+            health: 180,
+            attack: 7,
+            imageUrl: "assets/images/pic5.jpeg",
+            enemyAttackBack: 25
+
     }
-   
-    function powerboost(jedi) {
-        jedi.multiplier = this.multiplier * 10;
-        return jedi;
+};
+console.log(characters);
+//This function will render a character card to the page.
+//The character rendered and the area they are rendered to.
+var renderOne = function(character, renderArea) {
+
+}
+//This function handles the rendering of characters based on which object is picked.
+var renderCharacters = function(charObj, areaRender) {
+    if (arearenders === "#characters-section") {
+        $(areaRender).empty();
+        for (var key in charObj) {
+            if(charObj.hasOwnProperty(key)) {
+                renderOne(charObj[key]), areaRender;
+            }
+        }
     }
-   
-    //attack two jedi
-   
-   function attack(jediOne, jediTwo) {
-     let j1Power = jediOne.power();
-     let j2Power = jediTwo.power();
-     jediOne.health = jediOne.health - j2Power
-     jediTwo.health = jediTwo.health - j1Power
-   
-     //increas luke's power
-     powerboost (jediOne);
-    
-    
-     // jediOne.health = jediOne.health - jediTwo.power;
-     //   jediTwo.health = jediTwo.health - jediOne.power;
-     //   console.log(jediOne.health);
-     //   console.log(jediTwo.health);
-    }
-    function renderCharacters(){
-        let image = $("<img>")
-        image.attr("src",darthMaul.src)
-        image.addClass("character")
-        image.attr("data-name", darthMaul.name)
-        $("#characters").append(image);
-    }
-   renderCharacters();
-    
-    //the following is one way
-    //function attack(jediOne, jediTwo) {
-    //  let jedionehealth = jedione.health; //this is a number 200
-    //  let jeditwohealth = jeditwo.health; //this is a number 300
-    //  let jediOneAttack = 10;
-   
-    //}
-   
-    attack(luke, darthMaul);
-   
-   //});
-   
-    
-      //variables
-   let darthMauldiv = $('#darthmaul');
-   let charAttacksDic = $('#attackcharacters')
-   
-   //functions
-   function moveAttacker(attacker){
-      charAttaksDiv.append(attacker);
-   
-   }
-   
-   //events
-   //clicking character will move darth maul below
-   $('.character').on('click', function(){
-   console.log("this is working?")
-   console.log($(this).attr("data-name"))
-   });
-   
-   //click button
-   $('#attacksBtn').on('click', function(){
-      //you hit them (take away some points)
-      //they hit you (take away some of your points)
-      });
-   });
+}
+});

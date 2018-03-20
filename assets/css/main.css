@@ -1,4 +1,19 @@
-.main-section-title{
-    color: red;
+body {
+    background-image: url('./../images/pic7.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200;
 }
-background-image: ("assets/images/pic1.jpg");
+
+.section-title {
+    font-size: 200%;
+    color: black
+}
+.main-section-title {
+    font-size: 300%;
+    color: black
+    
+}
+.text {
+    text-align: center;
+}
